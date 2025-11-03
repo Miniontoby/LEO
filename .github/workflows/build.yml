@@ -15,7 +15,11 @@ jobs:
         with:
           path: installer/LEOinstaller.iss
 
+      - name: Rename .EXE file
+        run:
+          move installer\Output\mysetup.exe installer\Output\setup_LEO.exe
+
       - uses: actions/upload-artifact@v4
         with:
-          name: setup_LEO.exe
-          path: installer/Output/mysetup.exe
+          name: Setup_LEO
+          path: installer/Output/setup_LEO.exe
